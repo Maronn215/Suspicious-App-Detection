@@ -71,10 +71,7 @@ for link in soup.find_all(attrs={'class':'column'}):
             
             for text in final_soup.find_all('span',{'itemprop':'ratingValue'}):
                 star = star+str(text.getText().encode('ASCII', 'ignore').strip()).replace("b'","'").replace('b"','"') 
-            
-            
 
-            #print(title)
 
             with open ('crawler_games.txt','a',encoding='utf-8') as csvfile:
                  csvfile.write(str(title)+'\t'+str(description)+'\t'+str(version)+'\t'+str(review_ti)+'\t'
